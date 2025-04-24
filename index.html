@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spinning Cube with Background</title>
+    <title>Spinning Cube</title>
     <style>
-        /* code generated with chatgpt */
+        /*code generated with chatgpt*/
         * {
             margin: 0;
             padding: 0;
@@ -18,59 +18,54 @@
             align-items: center;
             height: 100vh;
             background-color: #282c34;
-            overflow: hidden;
-            position: relative;
         }
 
-        /* Spinning cube container */
         .cube {
             position: relative;
-            width: 100px; /* Cube size */
-            height: 100px;
+            width: 200px;
+            height: 200px;
             transform-style: preserve-3d;
             animation: rotateCube 5s infinite linear;
-            z-index: 1; /* Ensure the cube is above the background */
         }
 
         .face {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             background-size: cover;
             background-position: center;
         }
 
         .front {
-            transform: translateZ(50px);
+            transform: translateZ(100px);
             background-image: url('front.jpg'); /* Replace with your image */
         }
 
         .back {
-            transform: rotateY(180deg) translateZ(50px);
+            transform: rotateY(180deg) translateZ(100px);
             background-image: url('back.jpg'); /* Replace with your image */
         }
 
         .left {
-            transform: rotateY(-90deg) translateZ(50px);
+            transform: rotateY(-90deg) translateZ(100px);
             background-image: url('left.jpg'); /* Replace with your image */
         }
 
         .right {
-            transform: rotateY(90deg) translateZ(50px);
+            transform: rotateY(90deg) translateZ(100px);
             background-image: url('right.jpg'); /* Replace with your image */
         }
 
         .top {
-            transform: rotateX(90deg) translateZ(50px);
+            transform: rotateX(90deg) translateZ(100px);
             background-image: url('top.jpg'); /* Replace with your image */
         }
 
         .bottom {
-            transform: rotateX(-90deg) translateZ(50px);
+            transform: rotateX(-90deg) translateZ(100px);
             background-image: url('bottom.jpg'); /* Replace with your image */
         }
 
-        /* Animation for the cube */
         @keyframes rotateCube {
             from {
                 transform: rotateX(0) rotateY(0);
@@ -82,7 +77,6 @@
     </style>
 </head>
 <body>
-    <div class="background"></div>
     <div class="cube">
         <div class="face front"></div>
         <div class="face back"></div>
@@ -91,5 +85,10 @@
         <div class="face top"></div>
         <div class="face bottom"></div>
     </div>
+
+    <script>
+        // No JavaScript is required for this basic spinning effect
+        // But you could control rotation speed or other behaviors with JavaScript if needed
+    </script>
 </body>
 </html>

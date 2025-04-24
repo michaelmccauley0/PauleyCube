@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spinning Cube</title>
+    <title>Spinning Cube Through Telescope</title>
     <style>
         * {
             margin: 0;
@@ -19,52 +19,69 @@
             background-color: #282c34;
         }
 
+        /* Telescope container */
+        .telescope-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid white;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Spinning cube container */
         .cube {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 100px; /* Smaller size for the cube */
+            height: 100px;
             transform-style: preserve-3d;
             animation: rotateCube 5s infinite linear;
         }
 
         .face {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 100px; /* Match cube size */
+            height: 100px;
             background-size: cover;
             background-position: center;
         }
 
         .front {
-            transform: translateZ(100px);
+            transform: translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
         .back {
-            transform: rotateY(180deg) translateZ(100px);
+            transform: rotateY(180deg) translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
         .left {
-            transform: rotateY(-90deg) translateZ(100px);
+            transform: rotateY(-90deg) translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
         .right {
-            transform: rotateY(90deg) translateZ(100px);
+            transform: rotateY(90deg) translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
         .top {
-            transform: rotateX(90deg) translateZ(100px);
+            transform: rotateX(90deg) translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
         .bottom {
-            transform: rotateX(-90deg) translateZ(100px);
+            transform: rotateX(-90deg) translateZ(50px);
             background-image: url('pauleyHeadshot.jpg'); /* Replace with your image */
         }
 
+        /* Animation for the cube */
         @keyframes rotateCube {
             from {
                 transform: rotateX(0) rotateY(0);
@@ -76,18 +93,19 @@
     </style>
 </head>
 <body>
-    <div class="cube">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
+    <div class="telescope-container">
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
     </div>
 
     <script>
-        // No JavaScript is required for this basic spinning effect
-        // But you could control rotation speed or other behaviors with JavaScript if needed
+        // No JavaScript needed for basic spinning effect
     </script>
 </body>
 </html>
